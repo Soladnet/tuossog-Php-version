@@ -1,0 +1,17 @@
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /tuossog-Php-version/
+Options -Multiviews
+
+#RewriteRule ^login$ login.php [L]
+
+#RewriteCond %{HTTP_HOST} ^www.(.+)
+#RewriteCond %{HTTPS}s/%1 ^(on(s)|offs)/(.+)
+#RewriteRule ^ http%2://%3%{REQUEST_URI} [L,R=301]
+
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME}.php -f
+#RewriteRule ^(.*)$ $1.php
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
